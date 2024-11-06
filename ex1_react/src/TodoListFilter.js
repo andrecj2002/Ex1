@@ -1,55 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 
-function Lista() {
-  const [tasks, setTasks] = useState([
-    { id: "todo-0", name: "Eat", completed: true, isEditing: false },
-    { id: "todo-1", name: "Sleep", completed: false, isEditing: false },
-    { id: "todo-2", name: "Repeat", completed: false, isEditing: false },
-  ]);
-
-  const [taskCount, setTaskCount] = useState(tasks.filter(task => !task.completed).length);
-
-  const toggleTaskCompleted = (id) => {
-    const updatedTasks = tasks.map(task => {
-      if (task.id === id) {
-        return { ...task, completed: !task.completed };
-      }
-      return task;
-    });
-    setTasks(updatedTasks);
-    setTaskCount(updatedTasks.filter(task => !task.completed).length);
-  };
-
-  const deleteTask = (id) => {
-    const remainingTasks = tasks.filter(task => task.id !== id);
-    setTasks(remainingTasks);
-    setTaskCount(remainingTasks.filter(task => !task.completed).length);
-  };
-
-  const editTask = (id, newName) => {
-    const editedTasks = tasks.map(task => {
-      if (task.id === id) {
-        return { ...task, name: newName, isEditing: false };
-      }
-      return task;
-    });
-    setTasks(editedTasks);
-  };
-
-  const toggleEditing = (id) => {
-    const updatedTasks = tasks.map(task => {
-      if (task.id === id) {
-        return { ...task, isEditing: !task.isEditing };
-      }
-      return task;
-    });
-    setTasks(updatedTasks);
-  };
-
+function TodoListFilter({ tasks, toggleTaskCompleted, deleteTask, editTask, toggleEditing }) {
   return (
     <>
       <h2 id="list-heading" tabIndex="-1">
-        {taskCount} tasks remaining
+        {tasks.filter(task => !task.completed).length} tasks remaining
       </h2>
 
       <ul
@@ -96,4 +51,4 @@ function Lista() {
   );
 }
 
-export default Lista;
+export default TodoListFilter;
