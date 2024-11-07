@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
 import Lista from "./TodoListFilter";
-import "./App.css";
+import "./App.css"; // You might want to rename this to something more specific, like Ex1.css
 
-function App() {
+function Ex1() {
   const [tasks, setTasks] = useState([
     { id: "todo-0", name: "Eat", completed: true, isEditing: false },
     { id: "todo-1", name: "Sleep", completed: false, isEditing: false },
@@ -76,4 +76,4 @@ function App() {
   );
 }
 
-export default App;
+export default Ex1;
