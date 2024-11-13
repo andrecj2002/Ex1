@@ -5,10 +5,9 @@ import Lista from "./TodoListFilter";
 import "./App.css";
 import Navbar from "./Navbar";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Ex1 from './ex1_react/src/Ex1'; 
-import Ex2 from "./ex2_react/src/Ex2";
+import Ex1 from "../../ex1_react/src/Ex1"; 
 
-function App() {
+function Ex2() {
   const [tasks, setTasks] = useState(() => {
     // Vai buscar as tarefas a local storage
     const savedTasks = localStorage.getItem("tasks");
@@ -17,7 +16,7 @@ function App() {
       { id: "todo-1", name: "Sleep", completed: false, isEditing: false },
       { id: "todo-2", name: "Repeat", completed: false, isEditing: false },
     ];
-  });
+  }); 
 
   useEffect(() => {
     // Volta a salvar as tarefas em local storage a partir do useEffect
@@ -97,11 +96,10 @@ function App() {
           </div>
         } />
         <Route path="/ex1" element={<Ex1 />} />
-        <Route path="/ex2" element={<Ex2 />} />
         {/* Add other routes here */}
       </Routes>
     </Router>
   );
 }
 
-export default App;
+export default Ex2;
