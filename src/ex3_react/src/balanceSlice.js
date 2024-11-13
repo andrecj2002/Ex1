@@ -12,7 +12,7 @@ const balanceSlice = createSlice({
     deposit: (state, action) => {
       state.balance += action.payload;
     },
-    withdraw: (state, action) => {
+    withdraw: (state, action) => { 
       state.balance -= action.payload;
     },
   },

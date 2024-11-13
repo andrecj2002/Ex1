@@ -7,6 +7,7 @@ import Navbar from "./Navbar";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Ex1 from './ex1_react/src/Ex1'; 
 import Ex2 from "./ex2_react/src/Ex2";
+import Ex3 from "./ex3_react/src/Ex3";
 
 function App() {
   const [tasks, setTasks] = useState(() => {
@@ -98,6 +99,7 @@ function App() {
         } />
         <Route path="/ex1" element={<Ex1 />} />
         <Route path="/ex2" element={<Ex2 />} />
+        <Route path="/ex3" element={<Ex3 />} />
         {/* Add other routes here */}
       </Routes>
     </Router>

@@ -21,6 +21,9 @@ function Navbar() {
                 <li className={`navbar-item ${location.pathname === '/ex2' ? 'active' : ''} ${!isHome ? 'disabled' : ''}`}>
                     <Link to="/ex2">Ex. 2</Link>
                 </li>
+                <li className={`navbar-item ${location.pathname === '/ex3' ? 'active' : ''} ${!isHome ? 'disabled' : ''}`}>
+                    <Link to="/ex3">Ex. 3</Link>
+                </li>
             </ul>
         </nav>
     );
